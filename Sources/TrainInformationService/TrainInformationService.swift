@@ -78,12 +78,13 @@ public class TrainInformationService {
 					var delayReason: String?
 					let serviceId = service["serviceID"].element!.text
 					let destination = service["destination"]["location"]["locationName"].element!.text
+                    let destinationCrs = service["destination"]["location"]["crs"].element!.text
 					let departureTime = service["std"].element!.text
 					let currentStatus = service["etd"].element!.text
 					if let reason = service["delayReason"].element?.text {
 						delayReason = reason
 					}
-					let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
+                    let departingService = DepartingService(serviceId: serviceId, destination: destination, destinationCrs: destinationCrs, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
 					board.append(departingService)
 				}
 				completion(.success(board))
@@ -111,12 +112,13 @@ public class TrainInformationService {
                     var delayReason: String?
                     let serviceId = service["serviceID"].element!.text
                     let destination = service["destination"]["location"]["locationName"].element!.text
+                    let destinationCrs = service["destination"]["location"]["crs"].element!.text
                     let departureTime = service["std"].element!.text
                     let currentStatus = service["etd"].element!.text
                     if let reason = service["delayReason"].element?.text {
                         delayReason = reason
                     }
-                    let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
+                    let departingService = DepartingService(serviceId: serviceId, destination: destination, destinationCrs: destinationCrs, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
                     departures.append(departingService)
                 }
                 
@@ -218,12 +220,13 @@ extension TrainInformationService {
             var delayReason: String?
             let serviceId = service["serviceID"].element!.text
             let destination = service["destination"]["location"]["locationName"].element!.text
+            let destinationCrs = service["destination"]["location"]["crs"].element!.text
             let departureTime = service["std"].element!.text
             let currentStatus = service["etd"].element!.text
             if let reason = service["delayReason"].element?.text {
                 delayReason = reason
             }
-            let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
+            let departingService = DepartingService(serviceId: serviceId, destination: destination, destinationCrs: destinationCrs, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
             board.append(departingService)
         }
         
@@ -249,12 +252,13 @@ extension TrainInformationService {
             var delayReason: String?
             let serviceId = service["serviceID"].element!.text
             let destination = service["destination"]["location"]["locationName"].element!.text
+            let destinationCrs = service["destination"]["location"]["crs"].element!.text
             let departureTime = service["std"].element!.text
             let currentStatus = service["etd"].element!.text
             if let reason = service["delayReason"].element?.text {
                 delayReason = reason
             }
-            let departingService = DepartingService(serviceId: serviceId, destination: destination, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
+            let departingService = DepartingService(serviceId: serviceId, destination: destination, destinationCrs: destinationCrs, departureTime: departureTime, currentStatus: currentStatus, delayReason: delayReason)
             departures.append(departingService)
         }
         
